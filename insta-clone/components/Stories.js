@@ -3,7 +3,11 @@ import faker from "faker";
 
 import Story from "./Story";
 
+import { useSession } from "next-auth/react";
+
 function Stories() {
+  const { data: session } = useSession();
+
   const [suggestions, setSuggestions] = useState([]);
   useEffect(() => {
     const fakerSuggestions = [...Array(20)].map((_, i) => ({
@@ -18,6 +22,9 @@ function Stories() {
         bg-white border-gray-200 border rounded-sm
           scrollbar-thin scrollbar-thumb-black"
     >
+      {session && (
+        <Story img={session.user.image} username={session.user.username} />
+      )}
       {suggestions.map((profile) => (
         <Story
           key={profile.id}

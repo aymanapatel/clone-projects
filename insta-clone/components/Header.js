@@ -9,15 +9,20 @@ import {
   UserAddIcon,
   HeartIcon,
 } from "@heroicons/react/outline";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 function Header() {
+  const { data: session } = useSession();
+
+  console.log(`Seession ${JSON.stringify(session)}`);
+
   return (
     <div className="shadow-sm border-b bg-white sticky top-0 z-50">
       <div className="flex justify-between mx-5 lg:mx-auto max-w-6xl">
         {/* Left: Logo  */}
 
         {/* Logo1: Large Screen   */}
-        <div className="relative hidden lg:inline-grid h-24 w-24 cursor-pointer">
+        <div className="relative hidden lg:inline-grid w-24 cursor-pointer">
           <Image
             src="https://links.papareact.com/ocw"
             layout="fill"
@@ -59,25 +64,32 @@ function Header() {
           <MenuIcon className="h-6 md:hidden cursor-pointer" />
 
           {/* Paper sideways with Pill message  */}
-          <div className="relative navBtn">
-            <PaperAirplaneIcon className="navBtn rotate-45" />
-            <div
-              className="absolute -top-1 -right-2 text-xs w-5 h-5
-                        rounded-full flex items-center justify-center
-                        animate-pulse 
-                        text-white bg-red-500"
-            >
-              3
-            </div>
-          </div>
-          <PlusCircleIcon className="navBtn" />
-          <UserAddIcon className="navBtn" />
-          <HeartIcon className="navBtn" />
-          <img
-            src="https://media-exp1.licdn.com/dms/image/C4E03AQHW6vR4cApSgA/profile-displayphoto-shrink_800_800/0/1607337385817?e=1639612800&v=beta&t=Q6eUGM3YVW0i-ZxgTsrXMSKAlYmGJT5N7-8jZhdosQ0"
-            alt="Profile Picture"
-            className="h-10 cursor-pointer rounded-full"
-          />
+          {session ? (
+            <>
+              <div className="relative navBtn">
+                <PaperAirplaneIcon className="navBtn rotate-45" />
+                <div
+                  className="absolute -top-1 -right-2 text-xs w-5 h-5
+                      rounded-full flex items-center justify-center
+                      animate-pulse 
+                      text-white bg-red-500"
+                >
+                  3
+                </div>
+              </div>
+              <PlusCircleIcon className="navBtn" />
+              <UserAddIcon className="navBtn" />
+              <HeartIcon className="navBtn" />
+              <img
+                onClick={signOut}
+                src={session.user.image}
+                alt="Profile Picture"
+                className="h-10 w-10 cursor-pointer rounded-full"
+              />
+            </>
+          ) : (
+            <button onClick={signIn}>Signin</button>
+          )}
         </div>
       </div>
     </div>

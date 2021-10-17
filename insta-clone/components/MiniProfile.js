@@ -4,7 +4,6 @@ import React from "react";
 function MiniProfile() {
   const { data: session } = useSession();
 
-  console.log(`Session Mini profile ${JSON.stringify(session)}`);
   return (
     <div
       className="flex justify-between items-center

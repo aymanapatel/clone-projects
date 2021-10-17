@@ -20,8 +20,6 @@ function Header() {
   const [open, setOpen] = useRecoilState(modalState);
   const router = useRouter();
 
-  console.log(`Seession ${JSON.stringify(session)}`);
-
   return (
     <div className="shadow-sm border-b bg-white sticky top-0 z-50">
       <div className="flex justify-between mx-5 lg:mx-auto max-w-6xl">

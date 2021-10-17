@@ -20,18 +20,17 @@ import Post from "./Post";
 function Posts() {
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    const unsubscribe = onSnapshot(
-      query(collection(db, "posts"), orderBy("timestamp", "desc")),
-      (snapshot) => {
-        setPosts(snapshot.docs);
-      }
-    );
+  useEffect(
+    () =>
+      onSnapshot(
+        query(collection(db, "posts"), orderBy("timestamp", "desc")),
+        (snapshot) => {
+          setPosts(snapshot.docs);
+        }
+      ),
+    [db]
+  );
 
-    // cleanup
-    return unsubscribe;
-  }, [db]);
-  console.log(posts);
   return (
     <div>
       {posts.map((post) => (
@@ -41,7 +40,7 @@ function Posts() {
           userName={post.data().username}
           profileImage={post.data().profileImg}
           postImage={post.data().image}
-          caption={post.caption}
+          caption={post.data().caption}
         />
       ))}
       {/*   

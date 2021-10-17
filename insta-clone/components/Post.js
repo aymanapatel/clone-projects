@@ -41,16 +41,13 @@ function Post({ id, userName, profileImage, postImage, caption }) {
   //   return temp;
   // }, [db]);
 
-  // useEffect(
-  //   () =>
-  //     onSnapshot(
-  //       query(collection(db, "posts", id, "comments"), orderBy("timestamp", "desc")),
-  //       (snapshot) => {
-  //         setPosts(snapshot.docs);
-  //       }
-  //     ),
-  //   [db]
-  // );
+  useEffect(
+    () =>
+      onSnapshot(collection(db, "posts", id, "comments"), (snapshot) => {
+        setComments(snapshot.docs);
+      }),
+    [db]
+  );
 
   useEffect(
     () =>
@@ -155,6 +152,9 @@ function Post({ id, userName, profileImage, postImage, caption }) {
                 className="h-7 rounded-full"
                 alt=""
               />
+              <p className="text-sm flex-1">
+                <span className="font-bold">{comment.data().comment}</span>
+              </p>
             </div>
           ))}
         </div>

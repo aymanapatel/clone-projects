@@ -1,6 +1,10 @@
+import { signOut, useSession } from "next-auth/react";
 import React from "react";
 
 function MiniProfile() {
+  const { data: session } = useSession();
+
+  console.log(`Session Mini profile ${JSON.stringify(session)}`);
   return (
     <div
       className="flex justify-between items-center
@@ -8,19 +12,19 @@ function MiniProfile() {
     "
     >
       <img
-        src="https://links.papareact.com/3ke"
+        src={session?.user?.image}
         className="rounded-full h-16 w-16
                     border p-[2px]"
-        alt="Profile picture"
+        placeholder=""
+        alt="DP"
       />
       <div className="flex-1 mx-4">
-        <h2 className="font-bold">Something</h2>
-        <h3 className="text-sm text-gray-400">
-          {" "}
-          Welcome to the one and onlyccx{" "}
-        </h3>
+        <h2 className="font-bold">{session?.user?.username}</h2>
+        <h3 className="text-sm text-gray-400">Welcome to the one and onlycc</h3>
       </div>
-      <button className="text-blue-400 text-sm font-semibold">Sign out</button>
+      <button onClick={signOut} className="text-blue-400 text-sm font-semibold">
+        Sign out
+      </button>
     </div>
   );
 }

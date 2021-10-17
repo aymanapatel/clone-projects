@@ -13,8 +13,11 @@ function Stories() {
     setSuggestions(fakerSuggestions);
   }, []);
   return (
-    <div>
-      <Story />
+    <div
+      className="flex space-x-2 p-6 overflow-x-scroll
+        bg-white border-gray-200 border rounded-sm
+          scrollbar-thin scrollbar-thumb-black"
+    >
       {suggestions.map((profile) => (
         <Story
           key={profile.id}

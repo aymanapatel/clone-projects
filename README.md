@@ -4,7 +4,7 @@
 ## Instagram Clone 
 
 1. Finished Header
-2. TODO: Stories section
-3. TODO: Sidebar section
-4. TODO: NextAuth
-5. TODO: Firebase 
+2. Finished Stories section
+3. Finished Sidebar section
+4. Finished NextAuth
+5. Finished Firebase 

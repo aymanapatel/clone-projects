@@ -10,9 +10,12 @@ import {
   HeartIcon,
 } from "@heroicons/react/outline";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 function Header() {
   const { data: session } = useSession();
+
+  const router = useRouter();
 
   console.log(`Seession ${JSON.stringify(session)}`);
 
@@ -22,7 +25,10 @@ function Header() {
         {/* Left: Logo  */}
 
         {/* Logo1: Large Screen   */}
-        <div className="relative hidden lg:inline-grid w-24 cursor-pointer">
+        <div
+          className="relative hidden lg:inline-grid w-24 cursor-pointer"
+          onClick={() => router.push("/")}
+        >
           <Image
             src="https://links.papareact.com/ocw"
             layout="fill"
@@ -60,7 +66,7 @@ function Header() {
 
         {/* Right: Clickable links/modals */}
         <div className="flex justify-end items-center space-x-4">
-          <HomeIcon className="navBtn" />
+          <HomeIcon onClick={() => router.push("/")} className="navBtn" />
           <MenuIcon className="h-6 md:hidden cursor-pointer" />
 
           {/* Paper sideways with Pill message  */}

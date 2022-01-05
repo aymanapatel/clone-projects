@@ -14,6 +14,7 @@ export default NextAuth({
     signIn: "/auth/signin",
   },
   callbacks: {
+    /* eslint-disable no-unused-vars */
     async session({ session, token, user }) {
       // Add custom keys for session object
       session.user.username = session.user.name

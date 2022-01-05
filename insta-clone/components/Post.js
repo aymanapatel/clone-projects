@@ -19,7 +19,7 @@ import {
   setDoc,
 } from "@firebase/firestore";
 
-import { onSnapshot, doc, query } from "@firebase/firestore";
+import { onSnapshot, doc } from "@firebase/firestore";
 import { db } from "../firebase";
 
 function Post({ id, userName, profileImage, postImage, caption }) {

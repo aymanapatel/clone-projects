@@ -48,6 +48,7 @@ function Modal() {
     // 3.
     const imageRef = ref(storage, `posts/${docRef.id}/image`);
     await uploadString(imageRef, selectedFile, "data_url").then(
+      /* eslint-disable no-unused-vars */
       async (snapshot) => {
         const downloadURL = await getDownloadURL(imageRef);
 

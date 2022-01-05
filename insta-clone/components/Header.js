@@ -17,7 +17,9 @@ import { modalState } from "../atoms/modalAtom";
 function Header() {
   const { data: session } = useSession();
 
+  /* eslint-disable no-unused-vars */
   const [open, setOpen] = useRecoilState(modalState);
+
   const router = useRouter();
 
   return (

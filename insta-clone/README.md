@@ -3,6 +3,7 @@
 
 > ![Vercel](https://vercelbadge.vercel.app/api/aymanapatel/clone-projects)
 
+Deployed here: https://insta-clone-ayman.vercel.app/
 
 ## Tailwind and CSS
 

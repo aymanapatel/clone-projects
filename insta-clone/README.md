@@ -1,6 +1,8 @@
 # Insta clone
 
 
+> ![Vercel](https://vercelbadge.vercel.app/api/aymanapatel/clone-projects)
+
 
 ## Tailwind and CSS
 

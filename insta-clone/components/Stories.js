@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { generateUrlForDiceBar } from "../utils/utility";
 import faker from "faker";
 
 import Story from "./Story";
@@ -10,10 +11,16 @@ function Stories() {
 
   const [suggestions, setSuggestions] = useState([]);
   useEffect(() => {
-    const fakerSuggestions = [...Array(20)].map((_, i) => ({
-      ...faker.helpers.contextualCard(),
-      id: i,
-    }));
+    const fakerSuggestions = [...Array(20)].map((_, i) => {
+      const fakerObject = faker.helpers.contextualCard();
+      const imageUrl = generateUrlForDiceBar(fakerObject["username"]);
+      fakerObject["avatar"] = imageUrl;
+      return {
+        ...fakerObject,
+        id: i,
+      };
+    });
+
     setSuggestions(fakerSuggestions);
   }, []);
   return (

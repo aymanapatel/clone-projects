@@ -1,0 +1,41 @@
+= Openseas API
+Ayman Patel
+:toc:
+:icons: font
+
+
+== Nest Commands
+
+
+=== Run server
+
+
+1. `npm run start`
+
+
+- `localhost:3000`
+- `localhost:3000/graphql` : Apollo GraphQL Playground
+
+=== Generate Resources
+
+Command: `nest g resource <name>`
+
+
+Output:
+
+```
+opeansea-api> nest g resource donations
+? What transport layer do you use? GraphQL (schema first)
+? Would you like to generate CRUD entry points? Yes
+CREATE src/donations/donations.graphql (465 bytes)
+CREATE src/donations/donations.module.ts (252 bytes)
+CREATE src/donations/donations.resolver.spec.ts (565 bytes)
+CREATE src/donations/donations.resolver.ts (1075 bytes)
+CREATE src/donations/donations.service.spec.ts (481 bytes)
+CREATE src/donations/donations.service.ts (681 bytes)
+CREATE src/donations/dto/create-donation.input.ts (36 bytes)
+CREATE src/donations/dto/update-donation.input.ts (208 bytes)
+CREATE src/donations/entities/donation.entity.ts (25 bytes)
+UPDATE package.json (2187 bytes)
+UPDATE src/app.module.ts (741 bytes)
+```

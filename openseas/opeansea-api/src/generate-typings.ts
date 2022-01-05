@@ -1,15 +1,11 @@
-/**
- * This project has Schema-first approach.
- * First define schema, after which TS Type defintions will be aitomagically generated
- */
 import { GraphQLDefinitionsFactory } from '@nestjs/graphql';
-import { join } from 'path/posix';
+import { join } from 'path';
 
-const definitionFactory = new GraphQLDefinitionsFactory();
+const definitionsFactory = new GraphQLDefinitionsFactory();
 
-definitionFactory.generate({
-  path: join('./src/**/*.graphql'), // Desitnition for type definitions
-  typePaths: ['./**/*.graphql'], // Regex for filepath where graphql schema will be stored
+definitionsFactory.generate({
+  path: join(process.cwd(), 'src/graphql.ts'), // Desitnition for type definitions
+  typePaths: ['./src/**/*.graphql'], // Regex for filepath where graphql schema will be stored
   outputAs: 'class',
   watch: true,
 });

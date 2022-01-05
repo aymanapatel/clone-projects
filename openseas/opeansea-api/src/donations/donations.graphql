@@ -1,0 +1,25 @@
+type Donation {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input CreateDonationInput {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+# Not doing updates for now
+# input UpdateDonationInput {
+#  id: Int!
+# }
+
+type Query {
+  donations: [Donation]!
+  donation(id: Int!): Donation
+}
+
+type Mutation {
+  createDonation(createDonationInput: CreateDonationInput!): Donation!
+  # updateDonation(updateDonationInput: UpdateDonationInput!): Donation!
+  # removeDonation(id: Int!): Donation
+}

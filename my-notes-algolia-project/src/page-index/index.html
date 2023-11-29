@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Primary Meta Tags -->
+    <title>Ayman Algolia</title>
+    <meta name="title" content="Ayman Algolia">
+    <meta name="description" content="Ayman Algolia">
+">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ayman Algolia">
+    <meta property="og:description" content="Ayman Algolia">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/aquadzn/learn-x-by-doing-y/main/docs/preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Ayman Algolia">
+    <meta property="twitter:description" content="Ayman Algolia">
+    <meta property="twitter:image"
+        content="https://raw.githubusercontent.com/aquadzn/learn-x-by-doing-y/main/docs/preview.png">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/reset-min.css"
+        integrity="sha256-t2ATOGCtAIZNnzER679jwcFcKYfLlw01gli6F6oszk8=" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Karla:wght@400;600;700&family=Rubik:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"
+        integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js"
+        integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script> 
+        
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body class="bg-fixed bg-no-repeat bg-gradient-to-t from-black to-gray-900">
+    <section class="py-8 px-4 text-center">
+        <div class="w-full max-w-4xl mx-auto">
+            <div class="flex justify-center space-x-8 lg:space-x-20">
+                <a href="https://github.com/aymanapatel/my-notes-algolia" target="_blank"
+                    class="cursor-pointer text-sm text-gray-200 font-bold hover:underline">Ayman's algolia</a>
+            </div>
+            <div>
+                <h2 id="header"
+                    class="cursor-default text-5xl leading-tight lg:text-7xl lg:leading-tight text-white font-semibold mt-10 mb-6">Ayman's Algolia</h2>
+
+                <p class="cursor-default mb-10 font-semibold text-gray-400 leading-relaxed">
+                    Remembering is hard
+                </p>
+                <div id="aymandiv" class="flex p-4 font-bold text-white bg-red-500">ds</div>
+                <div class="container mx-auto">
+                    <div class="flex flex-col justify-center space-y-4 lg:flex-row lg:space-y-0 lg:space-x-6">
+                        <div
+                            class="rounded-md shadow-lg px-5 py-3 font-bold text-white bg-red-500 transition duration-500 ease-in-out hover:bg-green-600 hover:underline hover:text-gray-100">
+                            <a href="https://github.com/aymanapatel/my-notes-algolia/blob/main/projects.csv"
+                              target="_blank">
+                              Add a project
+                          </a>
+                        </div>
+                        <div class="order-last lg:order-none" id="searchbox"></div>
+                        <div id="menu-select"></div>
+                    </div>
+                    <div id="pagination" class="flex p-4"></div>
+                </div>
+
+
+                <section class="container mx-auto">
+                    <div id="hits"
+                        class="grid grid-cols-2 gap-x-4 gap-y-4 lg:mt-4 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-6">
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</html>

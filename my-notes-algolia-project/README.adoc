@@ -1,0 +1,75 @@
+= My Notes
+:toc:
+
+ifdef::env-github[]
+++++
+<p align="center">
+  <img src="https://img.shields.io/badge/MADE%20BY%20Vercel-000000.svg?style=for-the-badge&logo=vercel&labelColor=000000&logoWidth=20" href="https://vercel.com/dashboard">
+  <img width="100" height="30" src="https://www.vhv.rs/dpng/d/540-5404516_logo-algolia-nebula-blue-withspaces2x-svg-algolia-logo.png" href="https://www.algolia.com/doc">
+</p>
+++++
+endif::[]
+
+ifndef::env-github[]
+image::map.png[A map, align=center, link="https://vercel.com/dashboard"]
+endif::[]
+
+
+> Inspired from this https://github.com/aquadzn/learn-x-by-doing-y[repo]
+
+
+**https://my-notes-algolia.vercel.app[Link]**
+
+== Secrets
+
+Node Secret are hosted in reit and Python here
+
+https://www.youtube.com/watch?v=WuWsg0Ldess&t=142
+
+> Node uses https://github.com/aymanapatel/my-notes-algolia/settings/environments/103615062/edit[Environments Secrets] while Python uses https://github.com/aymanapatel/my-notes-algolia/settings/secrets/actions/KEY[Secrets]
+
+=== Check if Secrets is working
+
+
+```yml
+    - name: Test secret
+      run: |
+        if [ "$KEY" == "<your-secret>" ] 
+        then 
+          echo "Got secret"
+        else
+          echo "Erro getting secret"  
+        fi
+      env: 
+        KEY: ${{ secrets.KEY }}  
+```
+
+== Webpack static 
+
+https://github.com/ivarprudnikov/webpack-static-html-pages/tree/gh-pages[Github repo]
+
+== Content Creation
+
+=== Quad of content creation
+
+1. Conversation
+2. Sharing
+3. Creation
+4. Distribution
+
+
+=== CLEAR
+
+1. Create a Rhythm
+2. Link your sentences
+3. Eliminate anything that is confusing
+4. Add colorful details 
+5. Remove unnecessay words.
+
+== FAST
+
+1. Find
+2. Assemble
+3. Speak
+4. Teach
+    - Teach others

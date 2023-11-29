@@ -1,0 +1,15 @@
+.tmp
+node_modules/
+.sass-cache
+.idea
+.env
+*.iml
+*.DS_Store
+*.log
+.project
+.elasticbeanstalk/
+cypress/videos/
+cypress/screenshots/
+keys.properties
+
+.vercel
